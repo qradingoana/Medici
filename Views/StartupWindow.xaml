@@ -1,0 +1,17 @@
+﻿<Window x:Class="Medici.Views.StartupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medici.Views"
+        mc:Ignorable="d"
+        Title="Invoice and Quotation Management System - Medici" Height="250" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Width="100" Background="Navy">
+            <Button x:Name="LoginSelectButton" Content="Log In" Margin="5,75,5,0" Height="20" Command="{Binding ShowLoginCommand}"/>
+            <Button x:Name="SignupSelectButton" Content="Sign Up"  Margin="5,15,5,0" Command="{Binding ShowSignupCommand}"/>
+        </StackPanel>
+
+        <ContentControl Content="{Binding CurrentView}" Grid.Column="1" Margin="100,0,0,0"/>
+    </Grid>
+</Window>

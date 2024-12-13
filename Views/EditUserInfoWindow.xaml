@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Medici.Views.EditUserInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medici.Views"
+        mc:Ignorable="d"
+        Height="450" Width="600">
+    <Grid>
+        <TextBlock Text="Edit User Information" FontSize="18" FontWeight="Bold" Margin="0,10,0,400" HorizontalAlignment="Center"/>
+
+        <StackPanel Orientation="Vertical" Margin="0,0,0,0" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Edit Username"/>
+                <TextBox x:Name="EditUsernameTextBox" Margin="10,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock Text="Enter Password"/>
+                <TextBox x:Name="EnterUserPasswordTextBox" Margin="10,0,0,0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                <TextBlock Text="Confirm Password"/>
+                <TextBox x:Name="ConfirmUserPasswordTextBox" Margin="10,0,0,0" Width="100"/>
+            </StackPanel>
+            <Button x:Name="SaveUserInfoButton" Content="Save" Width="100" Margin="0,20,0,0" Click="SaveUserInfoButton_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

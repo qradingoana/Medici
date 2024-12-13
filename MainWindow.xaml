@@ -1,0 +1,20 @@
+﻿<Window x:Class="Medici.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medici"
+        mc:Ignorable="d"
+        Title="Main Menu - Medici" Height="750" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" Width="200" Background="Navy">
+            <TextBlock x:Name="UserTextBlock" TextAlignment="Center" Margin="10" FontSize="15" Foreground="White"/>
+            <Button x:Name="NewInvoiceQuotationButton" Content="Create New Invoice/Quotation" Margin="10" Height="50" Click="NewInvoiceQuotationButton_Click"/>
+            <Button x:Name="AddEditClientButton" Content="Add/Edit Client Information" Margin="10" Height="50" Click="AddEditClientButton_Click"/>
+            <Button x:Name="EditUserButton" Content="Edit User Information" Margin="10" Height="50" Click="EditUserButton_Click"/>
+            <Button x:Name="ViewDocListButton" Margin="10" Content="View Invoices/Quotations" Height="50" Click="ViewDocListButton_Click"/>
+            <Button x:Name="LogoutButton" Content="Log Out" Margin="50" Height="35" Click="LogoutButton_Click"/>
+        </StackPanel>
+        <ContentControl x:Name="MainContentControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="200,0,0,0"/>
+    </Grid>
+</Window>

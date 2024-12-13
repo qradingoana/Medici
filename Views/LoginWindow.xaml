@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Medici.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medici.Views"
+        mc:Ignorable="d"
+        Height="250" Width="300">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Width="150">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="UsernameTextBlock" Text="Username" Margin="0,0,5,0"/>
+                <TextBox x:Name="UsernameTextBox" Width="92"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock x:Name="PasswordTextBlock" Text="Password" Margin="0,0,8.5,0"/>
+                <PasswordBox x:Name="PasswordBox" Width="92"/>
+                <TextBox x:Name="PasswordTextBox" Width="92" Visibility="Collapsed"/>
+            </StackPanel>
+            <CheckBox x:Name="ShowPasswordCheckBox" Content="Show Password" Margin="0,10,0,0" Checked="ShowPasswordCheckBox_Checked" Unchecked="ShowPasswordCheckBox_Unchecked"/>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <Button x:Name="LoginButton" Content="Log In" Width="50" Click="LoginButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

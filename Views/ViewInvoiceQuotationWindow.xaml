@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Medici.Views.ViewInvoiceQuotationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medici.Views"
+        mc:Ignorable="d"
+        Height="500" Width="500">
+    <Grid Margin="10">
+        <!-- Define Rows and Columns -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Date Range -->
+            <RowDefinition Height="*"/>
+            <!-- DataGrid -->
+            <RowDefinition Height="Auto"/>
+            <!-- Select Button -->
+        </Grid.RowDefinitions>
+
+        <!-- Header: View Invoice/Quotation -->
+        <TextBlock Grid.Row="0" Text="View Invoice/Quotation" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+            <Button Name="UploadHeaderButton" Height="20" Margin="10,0,0,0" Content="Upload Header Image" Click="UploadHeaderButton_Click"/>
+            <Image Name="HeaderImage" Width="200" Height="100" />
+            <TextBox Name="HeaderImagePathTextBox" IsReadOnly="True" Margin="10" Width="130" Height="20"/>
+        </StackPanel>
+        <!-- Date Selection: Start Date and End Date -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
+                <TextBlock Text="Issue Start Date:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <DatePicker x:Name="StartDatePicker" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Issue End Date:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <DatePicker x:Name="EndDatePicker" Width="120"/>
+            </StackPanel>
+            <Button x:Name="LoadButton" Content="Load" Width="40" Margin="5,0,0,0" Click="LoadButton_Click"/>
+        </StackPanel>
+
+        <!-- DataGrid to Display Invoices/Quotations -->
+        <DataGrid Grid.Row="2" x:Name="InvoicesDataGrid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Invoice/Quotation No." Binding="{Binding InvoiceNumber}" Width="Auto"/>
+                <DataGridTextColumn Header="Client" Binding="{Binding ClientName}" Width="*"/>
+                <DataGridTextColumn Header="Date Issued" Binding="{Binding DateIssued}" Width="Auto"/>
+                <DataGridTextColumn Header="Total Amount" Binding="{Binding TotalAmount}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Select Button -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="PrintButton" Content="Print" Width="100" Margin="5" Click="PrintButton_Click"/>
+            <Button x:Name="EditButton" Content="Edit" Width="100" Margin="5" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
